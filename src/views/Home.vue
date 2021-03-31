@@ -7,7 +7,7 @@
       </el-header>
       <el-container>
         <div class="asideList">
-          <aside-list></aside-list>
+          <asidelist_admin></asidelist_admin>
         </div>
         <el-main>
           <router-view/>
@@ -19,40 +19,12 @@
 
 <script>
 import Vue from "vue";
+import Asidelist_admin from "../components/common/asidelist_admin";
 
 export default {
   name: "Home",
+  components: {Asidelist_admin},
 }
-
-Vue.component("asideList", {
-  template: '<el-aside >'
-      + '<el-menu  background-color="#f2f2f2" @select="menuClick">'
-      + '<el-submenu index="1">'
-      + '<template slot="title"><i class="el-icon-menu"></i>申报管理</template>'
-      + '<el-menu-item index="/test1">上传一流专业申报模板</el-menu-item>'
-      + '<el-menu-item index="/test2">专家分组</el-menu-item>'
-      + '</el-submenu>'
-      + '<el-submenu index="2">'
-      + '<template slot="title"><i class="el-icon-menu"></i>用户管理</template>'
-      + '<el-menu-item index="/test1">公告管理</el-menu-item>'
-      + '<el-menu-item index="/test2">在线用户</el-menu-item>'
-      + '</el-submenu>'
-      + '<el-submenu index="3">'
-      + '<template slot="title"><i class="el-icon-menu"></i>系统管理</template>'
-      + '<el-menu-item index="/test1">查看一流专业</el-menu-item>'
-      + '</el-submenu>'
-      + '<el-submenu index="4">'
-      + '<template slot="title"><i class="el-icon-menu"></i>一流专业管理</template>'
-      + '<el-menu-item index="/test1">上传一流专业申报模板</el-menu-item>'
-      + '</el-submenu>'
-      + '</el-menu>'
-      + '</el-aside>',
-  methods: {
-    menuClick(index) {
-      this.$router.push(index);
-    }
-  }
-});
 
 new Vue({el: '#app'})
 </script>
@@ -73,8 +45,6 @@ new Vue({el: '#app'})
 
 .divContainer {
   height: 750px;
-  margin-left: 200px;
-  margin-right: 200px;
   border: solid 1px;
 }
 
