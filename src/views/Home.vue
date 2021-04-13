@@ -1,14 +1,18 @@
 <template>
   <div class="divContainer" id="app">
     <el-container>
-      <el-header class="homeHeader">
-        <span class="title"><b>一流专业申报系统</b></span>
-        <span id="button_admin"><el-button>个人中心（管理员）</el-button></span>
-      </el-header>
-      <el-container>
+      <el-aside width="301px">
+        <div class="title">
+          <span><br/>陕西高等教育教学改革<br/>一流专业申报系统</span>
+        </div>
         <div class="asideList">
           <asidelist_admin></asidelist_admin>
         </div>
+      </el-aside>
+      <el-container>
+        <el-header class="homeHeader">
+          <home_header></home_header>
+        </el-header>
         <el-main>
           <router-view/>
         </el-main>
@@ -17,30 +21,29 @@
   </div>
 </template>
 
+
 <script>
 import Vue from "vue";
-import Asidelist_admin from "../components/common/asidelist_admin";
+import asidelist_admin from "../components/common/asidelist_admin";
+import asidelist_college from "../components/common/asidelist_college";
+import asidelist_expert from "../components/common/asidelist_expert";
+import Home_header from "../components/common/home_header";
 
 export default {
   name: "Home",
-  components: {Asidelist_admin},
+  components: {Home_header, asidelist_admin, asidelist_college, asidelist_expert},
 }
+
 
 new Vue({el: '#app'})
 </script>
 
 <style scoped>
 .homeHeader {
-  background: #81d3f8;
+  background: #545c64;
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 75px;
-}
-
-.homeHeader .title {
-  font-size: 50px;
-  font-family: 黑体;
 }
 
 .divContainer {
@@ -49,13 +52,17 @@ new Vue({el: '#app'})
 }
 
 .divContainer .asideList {
-  background: #f2f2f2;
+  background: #224d79;
   width: 300px;
   height: 600px;
 }
 
-#button_admin {
-  float: right;
-  margin-left: 350px;
+.title {
+  width: 279px;
+  font-size: 25px;
+  color: white;
+  background-color: #224d79;
+  height: 150px;
+  padding-left: 20px;
 }
 </style>
