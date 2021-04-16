@@ -26,6 +26,7 @@ import major_review from "../views/school/major_review";
 import review_process from "../views/school/review_process";
 import review_result from "../views/school/review_result";
 import college_user_management from "../views/school/college_user_management";
+import userInformation from "../components/common/userInformation";
 
 
 Vue.use(VueRouter)
@@ -163,6 +164,12 @@ const routes = [
             path: '/collegeUserManagement',
             name: 'collegeUserManagement',
             component: college_user_management,
+        },
+        //公共信息
+        {
+            path: "/userInformation",
+            name: "userInformation",
+            component: userInformation,
         }
     ]
   },
