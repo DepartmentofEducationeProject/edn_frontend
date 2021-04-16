@@ -13,24 +13,29 @@ import adminmanage from "../views/admin/adminmanage";
 import announce from "../views/admin/announce";
 import onliner from "../views/admin/onliner";
 import systemlog from "../views/admin/systemlog";
-import AddFile from "../views/college/AddFile";
-import Declaration from "../views/college/Declaration";
+import addFile from "../components/college/addFile";
+import declaration from "../views/college/declaration";
 import haveReviewList from "../views/expert/haveReviewList";
 import notReviewList from "../views/expert/notReviewList";
 import reviewPage from "../views/expert/reviewPage";
 import expertgroup from "../views/admin/expertgroup";
 import expert_transfer from "../views/admin/expert_transfer";
 import major_transfer from "../views/admin/major_transfer";
+import reviewProcess from "../views/college/reviewProcess"
+import major_review from "../views/school/major_review";
+import review_process from "../views/school/review_process";
+import review_result from "../views/school/review_result";
+import college_user_management from "../views/school/college_user_management";
 
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Login',
-    component: Login
-  },
+    {
+        path: '/',
+        name: 'Login',
+        component: Login
+    },
   {
     path: '/home',
     name: 'Home',
@@ -82,55 +87,83 @@ const routes = [
         component: announce,
       },
       {
-        path: '/onliner',
-        name: 'onliner',
-        component: onliner,
+          path: '/onliner',
+          name: 'onliner',
+          component: onliner,
       },
-      {
-        path: '/systemlog',
-        name: 'systemlog',
-        component: systemlog,
-      },
-      {
-        path: '/addFile',
-        name: 'addFile',
-        component: AddFile,
-      },
-      {
-        path: '/declaration',
-        name: 'declaration',
-        component: Declaration,
-      },
-      {
-        path: '/hasReviewed',
-        name: 'haveReviewList',
-        component: haveReviewList,
-      },
-      {
-        path: '/notReviewed',
-        name: 'notReviewList',
-        component: notReviewList,
-      },
-      {
-        path: '/reviewpage',
-        name: 'reviewPage',
-        component: reviewPage,
-      },
-      {
-        path: '/expertgroup',
-        name: 'expertgroup',
-        component: expertgroup,
-      },
-      {
-        path: '/expert_transfer',
-        name: 'expert_transfer',
-        component: expert_transfer,
-      },
-      {
-        path: '/major_transfer',
-        name: 'major_transfer',
-        component: major_transfer,
-      }
+        {
+            path: '/systemlog',
+            name: 'systemlog',
+            component: systemlog,
+        },
+        {
+            path: '/expertgroup',
+            name: 'expertgroup',
+            component: expertgroup,
+        },
+        {
+            path: '/expert_transfer',
+            name: 'expert_transfer',
+            component: expert_transfer,
+        },
+        {
+            path: '/major_transfer',
+            name: 'major_transfer',
+            component: major_transfer,
+        },
+        //学院用户
+        {
+            path: '/addFile',
+            name: 'addFile',
+            component: addFile,
+        },
+        {
+            path: '/declaration',
+            name: 'declaration',
+            component: declaration,
+        },
+        {
+            path: '/reviewProcess',
+            name: 'reviewProcess',
+            component: reviewProcess,
+        },
+        //专家用户
+        {
+            path: '/hasReviewed',
+            name: 'haveReviewList',
+            component: haveReviewList,
+        },
+        {
+            path: '/notReviewed',
+            name: 'notReviewList',
+            component: notReviewList,
+        },
+        {
+            path: '/reviewpage',
+            name: 'reviewPage',
+            component: reviewPage,
+        },
+        //学校用户
+        {
+            path: '/majorReview',
+            name: 'majorReview',
+            component: major_review,
+        },
+        {
+            path: '/reviewListProcess',
+            name: 'reviewListProcess',
+            component: review_process,
+        },
+        {
+            path: '/reviewListResult',
+            name: 'reviewListResult',
+            component: review_result,
+        },
+        {
+            path: '/collegeUserManagement',
+            name: 'collegeUserManagement',
+            component: college_user_management,
+        }
     ]
   },
 

@@ -1,17 +1,22 @@
 <template>
   <div>
-    <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
-      <h3 class="loginTitle">登陆系统</h3>
-      <el-form-item prop="username">
-        <el-input type="text" v-model="loginForm.username" aria-placeholder="请输入用户名"></el-input>
-      </el-form-item>
-      <el-form-item prop="password">
-        <el-input type="password" v-model="loginForm.password" aria-placeholder="请输入密码"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" class="loginButton" @click="submitLogin">登陆</el-button>
-      </el-form-item>
-    </el-form>
+    <div class="background">
+      <img :src="imgSrc" width="100%" height="100%" alt=""/>
+    </div>
+    <div class="loginContainer">
+      <el-form :rules="rules" ref="loginForm" :model="loginForm">
+        <h3 class="loginTitle">登陆系统</h3>
+        <el-form-item prop="username">
+          <el-input type="text" ref="username" v-model="loginForm.username" aria-placeholder="请输入用户名"></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input type="password" v-model="loginForm.password" aria-placeholder="请输入密码"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" class="loginButton" @click="submitLogin">登陆</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -20,6 +25,7 @@ export default {
   name: "Login",
   data() {
     return {
+      imgSrc: require('../assets/login_background.jpg'),
       loginForm: {
         username: "admin",
         password: "123"
@@ -35,7 +41,7 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           if (true) {
-            this.$router.replace('/home');
+            this.$router.push({path: '/home', query: {username: this.$refs.username.value}});
           }
         } else {
           this.$message.error('请输入所有字段！');
@@ -48,15 +54,26 @@ export default {
 </script>
 
 <style>
+.background {
+  border: solid;
+  width: 100%;
+  height: 100%; /**宽高100%是为了图片铺满屏幕 */
+  z-index: -1;
+  position: absolute;
+}
+
 .loginContainer {
   border-radius: 15px;
   background-clip: padding-box;
-  margin: 180px auto;
-  width: 350px;
+  margin: 10% 35%;
+  width: 30%;
+  height: 40%;
   padding: 15px 35px 15px 35px;
   background: #fff;
   border: 1px solid #eaeaea;
   box-shadow: 0 0 25px #cac6c6;
+  z-index: 1;
+  position: absolute;
 }
 
 .loginTitle {

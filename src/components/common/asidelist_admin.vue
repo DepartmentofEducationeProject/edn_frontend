@@ -4,7 +4,7 @@
       <el-menu background-color="#224d79" @select="menuClick">
         <el-submenu index="1">
           <template slot="title"><i class="el-icon-menu"></i><span class="list_item">申报管理</span></template>
-          <el-menu-item index="/upload"><span class="list_item">上传一流专业申报模板</span></el-menu-item>
+          <el-menu-item index="/upload"><span class="list_item">上传继续教育申报模板</span></el-menu-item>
           <el-menu-item index="/showlist"><span class="list_item">查看并审核学校上报专业</span></el-menu-item>
           <el-menu-item index="/reviewprogress"><span class="list_item">查看专家评审进度</span></el-menu-item>
           <el-menu-item index="/reviewresult"><span class="list_item">查看专家打分结果</span></el-menu-item>

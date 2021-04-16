@@ -54,13 +54,13 @@
             align="center"
             label="编辑专家"
             width="120">
-          <el-button type="mini primary">修改专家</el-button>
+          <el-button type="mini primary" @click="toExpertTransfer()">修改专家</el-button>
         </el-table-column>
         <el-table-column
             align="center"
             label="编辑专业"
             width="120">
-          <el-button type="mini primary" @click="">修改专业</el-button>
+          <el-button type="mini primary" @click="toMajorTransfer()">修改专业</el-button>
         </el-table-column>
         <el-table-column
             align="center"
@@ -151,6 +151,12 @@ export default {
     closeMajor: function () {
       this.showMajor = !this.showMajor;
     },
+    toExpertTransfer() {
+      this.$router.replace("/expert_transfer");
+    },
+    toMajorTransfer() {
+      this.$router.replace("/major_transfer");
+    }
   }
 }
 </script>
