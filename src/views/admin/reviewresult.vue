@@ -43,46 +43,55 @@
         <el-table-column
             prop="id"
             label="编号"
+            align="center"
             width="80">
         </el-table-column>
         <el-table-column
             prop="expName"
             label="专家名称"
+            align="center"
             width="120">
         </el-table-column>
         <el-table-column
             prop="major"
             label="申报专业"
+            align="center"
             width="180">
         </el-table-column>
         <el-table-column
             prop="school"
             label="申报学校"
+            align="center"
             width="180">
         </el-table-column>
         <el-table-column
             prop="manager"
             label="负责人"
+            align="center"
             width="80">
         </el-table-column>
         <el-table-column
             prop="tel"
             label="联系方式"
+            align="center"
             width="180">
         </el-table-column>
         <el-table-column
             prop="level"
             label="专业层次"
+            align="center"
             width="100">
         </el-table-column>
         <el-table-column
             prop="date"
             label="创建时间"
+            align="center"
             width="120">
         </el-table-column>
         <el-table-column
             prop="score"
             label="得分"
+            align="center"
             width="60px">
         </el-table-column>
       </el-table>

@@ -46,36 +46,42 @@
             width="60">
         </el-table-column>
         <el-table-column
+            align="center"
             property="school"
             label="所在学校"
             width="140">
         </el-table-column>
         <el-table-column
+            align="center"
             property="majorName"
             label="专业名称"
             width="180">
         </el-table-column>
         <el-table-column
+            align="center"
             property="majorNum"
             label="专业代码"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             property="name"
             label="申报人"
             width="80">
         </el-table-column>
         <el-table-column
+            align="center"
             property="tel"
             label="联系方式"
             width="140">
         </el-table-column>
         <el-table-column
+            align="center"
             property="status"
             label="审批状态"
             width="120">
         </el-table-column>
-        <el-table-column label="材料">
+        <el-table-column label="材料" align="center">
           <template slot-scope="scope">
             <el-button
                 type="primary"
@@ -84,7 +90,7 @@
             </el-button>
           </template>
         </el-table-column>
-        <el-table-column label="通过">
+        <el-table-column label="通过" align="center">
           <template slot-scope="scope">
             <el-button
                 type="success"

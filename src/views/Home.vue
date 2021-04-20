@@ -76,7 +76,7 @@ export default {
 }
 
 .divContainer {
-  height: 750px;
+  height: 740px;
   overflow-y: hidden;
   border: solid 1px;
 }

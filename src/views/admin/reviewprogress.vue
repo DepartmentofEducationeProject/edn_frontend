@@ -27,7 +27,7 @@
       <el-table
           ref="singleTable"
           :data="tableData"
-          height="350px"
+          height="340px"
           border
           highlight-current-row
           @current-change="handleCurrentChange"

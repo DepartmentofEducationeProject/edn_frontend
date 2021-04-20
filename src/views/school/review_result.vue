@@ -52,8 +52,7 @@
         <el-table-column
             prop="major"
             label="专业名称"
-            align="center"
-            width="120">
+            align="center">
         </el-table-column>
         <el-table-column
             prop="manager"
@@ -127,51 +126,51 @@ export default {
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '计算机学院',
         code: "120122554",
-        major: "软件工程",
+        major: "计算机科学与技术",
         status: "申报失败",
-        manager: "李世良",
+        manager: "刘晓斌",
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '微电子学院',
         code: "120122554",
-        major: "软件工程",
+        major: "微电子科学与技术",
         status: "申报通过",
-        manager: "李世良",
+        manager: "陈军正",
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '理学院',
         code: "120122554",
-        major: "软件工程",
+        major: "应用数学",
         status: "申报通过",
-        manager: "李世良",
+        manager: "陈军歪",
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '材料学院',
         code: "120122554",
-        major: "软件工程",
+        major: "材料科学与技术",
         status: "申报失败",
-        manager: "李世良",
+        manager: "李忠良",
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '航空学院',
         code: "120122554",
-        major: "软件工程",
+        major: "飞行器设计与制造",
         status: "申报失败",
-        manager: "李世良",
+        manager: "李大亮",
         subject: '软件工程',
         date: '2021/03/02',
       }, {
-        college: '软件学院',
+        college: '航天学院',
         code: "120122554",
-        major: "软件工程",
+        major: "探测与制导",
         status: "申报失败",
-        manager: "李世良",
+        manager: "李晓亮",
         subject: '软件工程',
         date: '2021/03/02',
       }],

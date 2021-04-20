@@ -9,7 +9,7 @@
     </div>
     <div class="basic">
       <div class="filearea">
-        <img :src="imgFile" height="100%" alt=""/>
+        <img :src="imgFile" width="100%" alt=""/>
 
       </div>
       <div class="optionarea">
@@ -43,8 +43,8 @@
             <el-input type="textarea" :rows="5"></el-input>
           </el-form-item>
         </el-form>
-        <el-button type="primary">保存打分</el-button>
-        <el-button type="primary">返回列表</el-button>
+        <el-button type="primary" @click="back">保存打分</el-button>
+        <el-button type="primary" @click="back">返回列表</el-button>
       </div>
 
     </div>
@@ -60,7 +60,7 @@ export default {
   components: {pdf},
   data() {
     return {
-      imgFile: require('../../assets/test.png'),
+      imgFile: require('../../assets/test.jpg'),
       input: "",
       tableData: [{
         type: 'A',
@@ -74,7 +74,11 @@ export default {
       }]
     };
   },
-  methods: {}
+  methods: {
+    back() {
+      this.$router.replace('/notReviewed');
+    }
+  }
 }
 </script>
 
@@ -84,13 +88,14 @@ export default {
   width: 1150px;
   height: 550px;
   background-color: rgba(251, 255, 246, 0.16);
+  border: solid;
 }
 
 .filearea {
   width: 50%;
   height: 100%;
+  overflow-y: auto;
   border-radius: 10px;
-  border: solid;
 }
 
 .optionarea {

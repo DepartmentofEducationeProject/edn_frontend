@@ -113,6 +113,7 @@
                 align="center"
                 prop="option"
                 label="操作">
+              <el-button class="el-icon-download">下载</el-button>
             </el-table-column>
           </el-table>
         </div>

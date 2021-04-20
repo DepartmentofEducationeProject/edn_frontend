@@ -4,7 +4,7 @@
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>学校</el-breadcrumb-item>
-        <el-breadcrumb-item>学员用户管理</el-breadcrumb-item>
+        <el-breadcrumb-item>学院用户管理</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="result_search">

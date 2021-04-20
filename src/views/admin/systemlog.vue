@@ -35,6 +35,7 @@
         </el-table-column>
         <el-table-column
             align="center"
+            label="序号"
             type="index"
             width="55">
         </el-table-column>

@@ -66,8 +66,8 @@ export default {
 <style>
 .background {
   border: solid;
-  width: 100%;
-  height: 100%; /**宽高100%是为了图片铺满屏幕 */
+  width: 98%;
+  height: 98%; /**宽高100%是为了图片铺满屏幕 */
   z-index: -1;
   position: absolute;
 }
@@ -75,7 +75,7 @@ export default {
 .loginContainer {
   border-radius: 15px;
   background-clip: padding-box;
-  margin: 10% 35%;
+  margin: 10% 32%;
   width: 30%;
   height: 40%;
   padding: 15px 35px 15px 35px;

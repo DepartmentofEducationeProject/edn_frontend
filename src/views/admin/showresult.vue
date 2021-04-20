@@ -133,7 +133,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625432168",
-        score: "92"
+        score: "申报通过"
       }, {
         id: "140002",
         school: "西北工业大学",
@@ -141,7 +141,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625452975",
-        score: "93"
+        score: "申报通过"
       }, {
         id: "140003",
         school: "西北工业大学",
@@ -149,7 +149,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "176254741365",
-        score: "96"
+        score: "申报通过"
       }, {
         id: "140004",
         school: "西安交通大学",
@@ -157,7 +157,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625785438",
-        score: "95"
+        score: "申报通过"
       }, {
         id: "140005",
         school: "西安交通大学",
@@ -165,7 +165,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625784312",
-        score: "86"
+        score: "申报通过"
       }, {
         id: "140006",
         school: "西安电子科技大学",
@@ -173,7 +173,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625126543",
-        score: "94"
+        score: "申报通过"
       }, {
         id: "140007",
         school: "西安电子科技大学",
@@ -181,7 +181,7 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625854625",
-        score: "93"
+        score: "申报通过"
       }],
       multipleSelection: []
     }

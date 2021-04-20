@@ -23,18 +23,19 @@
             align="center"
             prop="college"
             label="申报学院"
-            width="180">
+            width="120">
         </el-table-column>
         <el-table-column
             align="center"
             prop="code"
             label="专业代码"
-            width="120">
+            width="80">
         </el-table-column>
         <el-table-column
             align="center"
             prop="major"
-            label="专业名称">
+            label="专业名称"
+            width="160">
         </el-table-column>
         <el-table-column
             align="center"
@@ -44,7 +45,8 @@
         <el-table-column
             align="center"
             prop="subject"
-            label="所属学科">
+            label="所属学科"
+            width="160">
         </el-table-column>
         <el-table-column
             align="center"
@@ -98,67 +100,67 @@ export default {
         status: '校方通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '计算机学院',
+        code: "0002",
+        major: '计算机科学与技术',
+        manager: '刘晓斌',
+        subject: '计算机科学与技术',
         status: '校方通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '计算机学院',
+        code: "0003",
+        major: '应用计算机学',
+        manager: '陈军正',
+        subject: '计算机科学与技术',
         status: '校方通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '理学院',
+        code: "0004",
+        major: '应用数学',
+        manager: '李晓丽',
+        subject: '数学',
         status: '教育厅通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '理学院',
+        code: "0005",
+        major: '材料化学',
+        manager: '李大亮',
+        subject: '化学',
         status: '教育厅通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '材料学院',
+        code: "0006",
+        major: '材料科学与技术',
+        manager: '陈军歪',
+        subject: '材料科学',
         status: '教育厅通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '航空学院',
+        code: "0007",
+        major: '飞行器设计与制造',
+        manager: '陈军正',
+        subject: '航空宇航科学与技术',
         status: '教育厅通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
+        college: '航空学院',
+        code: "0008",
+        major: '探测与制导',
         manager: '李世良',
-        subject: '软件工程',
+        subject: '航空宇航科学与技术',
         status: '教育厅通过',
         date: '2021/03/02'
       }, {
-        college: '软件学院',
-        code: "0001",
-        major: '软件工程',
-        manager: '李世良',
-        subject: '软件工程',
+        college: '航海学院',
+        code: "0009",
+        major: '水声科学',
+        manager: '李忠良',
+        subject: '航空宇航科学与技术',
         status: '教育厅通过',
         date: '2021/03/02'
       }]
