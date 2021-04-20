@@ -23,7 +23,7 @@
     <div class="result_option">
       <el-button type="primary">刷新</el-button>
       <el-button type="success">切换</el-button>
-      <el-button type="info">导出评审结果</el-button>
+      <el-button type="info">导入评审结果</el-button>
     </div>
     <div class="result_table">
       <el-table
@@ -34,39 +34,46 @@
           style="width: 100%"
           @selection-change="handleSelectionChange">
         <el-table-column
+            align="center"
             type="selection"
             width="55">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="id"
             label="序号"
             width="120">
         </el-table-column>
         <el-table-column
-            prop="school"
-            label="学校"
-            width="120">
-        </el-table-column>
-        <el-table-column
+            align="center"
             prop="major"
             label="一流专业"
-            width="120">
+            width="180">
         </el-table-column>
         <el-table-column
+            align="center"
+            prop="school"
+            label="学校"
+            width="180">
+        </el-table-column>
+        <el-table-column
+            align="center"
             prop="status"
             label="专业状态">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="manager"
             label="负责人"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="tel"
             label="联系方式"
             width="120">
         </el-table-column>
-        <el-table-column label="申报书">
+        <el-table-column label="申报书" align="center">
           <template slot-scope="scope">
             <el-button
                 type="primary"
@@ -75,7 +82,7 @@
             </el-button>
           </template>
         </el-table-column>
-        <el-table-column label="附加材料">
+        <el-table-column label="附加材料" align="center">
           <template slot-scope="scope">
             <el-button
                 type="primary"
@@ -85,24 +92,24 @@
           </template>
         </el-table-column>
         <el-table-column
+            align="center"
             prop="score"
-            label="得分"
+            label="申报结果"
             show-overflow-tooltip>
         </el-table-column>
       </el-table>
     </div>
-    <div class="block pages">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[100, 200, 300, 400]"
-          :page-size="100"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
-          style="margin-left: 20%">
-      </el-pagination>
-    </div>
+
+    <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[100, 200, 300, 400]"
+        :page-size="100"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="400">
+    </el-pagination>
+
   </div>
 </template>
 
@@ -126,47 +133,55 @@ export default {
         status: "已审核",
         manager: "李世良",
         tel: "17625432168",
-        score: "90"
+        score: "92"
       }, {
-        id: "140001",
+        id: "140002",
         school: "西北工业大学",
+        major: "计算机科学与技术",
+        status: "已审核",
+        manager: "李世良",
+        tel: "17625452975",
+        score: "93"
+      }, {
+        id: "140003",
+        school: "西北工业大学",
+        major: "人工智能",
+        status: "已审核",
+        manager: "李世良",
+        tel: "176254741365",
+        score: "96"
+      }, {
+        id: "140004",
+        school: "西安交通大学",
+        major: "工商管理",
+        status: "已审核",
+        manager: "李世良",
+        tel: "17625785438",
+        score: "95"
+      }, {
+        id: "140005",
+        school: "西安交通大学",
+        major: "能源与动力",
+        status: "已审核",
+        manager: "李世良",
+        tel: "17625784312",
+        score: "86"
+      }, {
+        id: "140006",
+        school: "西安电子科技大学",
+        major: "电子科学与技术",
+        status: "已审核",
+        manager: "李世良",
+        tel: "17625126543",
+        score: "94"
+      }, {
+        id: "140007",
+        school: "西安电子科技大学",
         major: "软件工程",
         status: "已审核",
         manager: "李世良",
-        tel: "17625432168",
-        score: "90"
-      }, {
-        id: "140001",
-        school: "西北工业大学",
-        major: "软件工程",
-        status: "已审核",
-        manager: "李世良",
-        tel: "17625432168",
-        score: "90"
-      }, {
-        id: "140001",
-        school: "西北工业大学",
-        major: "软件工程",
-        status: "已审核",
-        manager: "李世良",
-        tel: "17625432168",
-        score: "90"
-      }, {
-        id: "140001",
-        school: "西北工业大学",
-        major: "软件工程",
-        status: "已审核",
-        manager: "李世良",
-        tel: "17625432168",
-        score: "90"
-      }, {
-        id: "140001",
-        school: "西北工业大学",
-        major: "软件工程",
-        status: "已审核",
-        manager: "李世良",
-        tel: "17625432168",
-        score: "90"
+        tel: "17625854625",
+        score: "93"
       }],
       multipleSelection: []
     }
@@ -211,8 +226,8 @@ export default {
   margin-top: 20px;
 }
 
-.pages {
-  margin-left: 50px;
+.el-pagination {
+  text-align: center;
   margin-top: 10px;
 }
 </style>

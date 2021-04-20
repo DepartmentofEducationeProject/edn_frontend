@@ -3,9 +3,8 @@
     <div style="margin-bottom: 50px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+        <el-breadcrumb-item>学校</el-breadcrumb-item>
+        <el-breadcrumb-item>学员用户管理</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="result_search">
@@ -30,7 +29,7 @@
           :data="tableData"
           border
           tooltip-effect="dark"
-          style="width: 100%"
+          style="width: 100%;border: solid"
           @selection-change="handleSelectionChange">
         <el-table-column
             label="选中"
@@ -54,7 +53,7 @@
             align="center"
             prop="username"
             label="用户名"
-            width="200">
+            width="180">
         </el-table-column>
         <el-table-column
             align="center"
@@ -81,33 +80,36 @@
         <el-table-column
             label="操作"
             align="center">
-          <el-button
-              type="primary"
-              size="mini">编辑
-          </el-button>
+          <el-button type="primary" size="mini" @click="toggleModal()">编辑</el-button>
+        </el-table-column>
+        <el-table-column
+            align="center"
+            label="删除">
+          <el-button type="danger" size="mini" @click="open_del">删除</el-button>
         </el-table-column>
       </el-table>
     </div>
-    <div class="block pages">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[100, 200, 300, 400]"
-          :page-size="100"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
-          style="margin-left: 20%">
-      </el-pagination>
-    </div>
+    <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[100, 200, 300, 400]"
+        :page-size="100"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="400">
+    </el-pagination>
+    <Modal v-show="showModal" v-on:closeme="closeme"></Modal>
   </div>
 </template>
 
 <script>
+import Modal from "../../components/college/Modal";
+
 export default {
   name: "college_user_management",
   data() {
     return {
+      showModal: false,
       formInline: {
         depart: '',
         major: '',
@@ -155,7 +157,7 @@ export default {
       multipleSelection: []
     }
   },
-
+  components: {Modal},
   methods: {
     toggleSelection(rows) {
       if (rows) {
@@ -177,6 +179,29 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    toggleModal: function () {
+      this.showModal = !this.showModal;
+    },
+    closeme: function () {
+      this.showModal = !this.showModal;
+    },
+    open_del() {
+      this.$confirm('此操作将删除该用户, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     }
   }
 }
@@ -191,13 +216,31 @@ export default {
   margin-top: 20px;
 }
 
-.pages {
-  margin-left: 50px;
-  margin-top: 10px;
-}
-
 .school_tips {
   font-size: 30px;
   color: red;
+}
+
+.el-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
 }
 </style>

@@ -12,19 +12,21 @@
             style="width: 100%"
             :row-style="{height:'10px'}">
           <el-table-column
-              prop="date"
-              label="日期"
+              align="center"
+              type="index"
+              label="序号"
               width="120">
           </el-table-column>
           <el-table-column
+              align="center"
               prop="name"
               label="姓名"
               width="120">
           </el-table-column>
           <el-table-column
-              prop="address"
-              label="地址"
-              width="120">
+              align="center"
+              prop="id"
+              label="编号">
           </el-table-column>
         </el-table>
       </div>
@@ -47,6 +49,7 @@
   justify-content: center;
   align-items: center;
   border: solid;
+  z-index: 1;
 }
 
 .modal {
@@ -103,33 +106,29 @@ export default {
   data() {
     return {
       tableData: [{
-        date: '2016-05-03',
+        id: '1044214',
         name: '王小虎',
-        address: '1501'
       }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '1501'
+        id: '1044216',
+        name: '张小喵',
       }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '1501'
+        id: '1044217',
+        name: '李晓亮',
       }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '1501'
+        id: '1044218',
+        name: '李忠良',
       }, {
-        date: '2016-05-08',
-        name: '王小虎',
-        address: '1501'
+        id: '1044219',
+        name: '李大亮',
       }, {
-        date: '2016-05-06',
-        name: '王小虎',
-        address: '1501'
+        id: '1044210',
+        name: '李世良',
       }, {
-        date: '2016-05-07',
-        name: '王小虎',
-        address: '1501'
+        id: '1044211',
+        name: '陈军正',
+      }, {
+        id: '1044212',
+        name: '陈军歪 ',
       }]
     }
   },

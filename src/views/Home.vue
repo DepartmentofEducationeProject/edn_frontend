@@ -31,16 +31,32 @@ import asidelist_admin from "../components/common/asidelist_admin";
 import asidelist_college from "../components/common/asidelist_college";
 import asidelist_expert from "../components/common/asidelist_expert";
 import asidelist_school from "../components/common/asidelist_school";
+import admin_homePage from "./admin/admin_homePage";
 import Home_header from "../components/common/home_header";
+import college_homePage from "./college/college_homePage";
+import school_homePage from "./school/school_homePage";
+import expert_homePage from "./expert/expert_homePage";
+
 
 export default {
   name: "Home",
   data() {
     return {
+      showHomePage: false,
       type: this.$route.query.username,
     }
   },
-  components: {Home_header, asidelist_admin, asidelist_college, asidelist_expert, asidelist_school},
+  components: {
+    admin_homePage,
+    college_homePage,
+    school_homePage,
+    expert_homePage,
+    Home_header,
+    asidelist_admin,
+    asidelist_college,
+    asidelist_expert,
+    asidelist_school
+  },
 };
 // const vm = new Vue({
 //   el: "#app",
@@ -61,6 +77,7 @@ export default {
 
 .divContainer {
   height: 750px;
+  overflow-y: hidden;
   border: solid 1px;
 }
 

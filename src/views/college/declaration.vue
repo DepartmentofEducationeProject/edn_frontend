@@ -1,8 +1,15 @@
 <template>
   <div class="declaration">
+    <div style="margin-bottom: 50px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>学院</el-breadcrumb-item>
+        <el-breadcrumb-item>填写专业申报书</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
       <el-tab-pane label="申报信息" name="first">
-        <div class="">
+        <div>
           <el-form :inline="true" label-width="100px">
             <el-form-item label="专业代码">
               <el-select>

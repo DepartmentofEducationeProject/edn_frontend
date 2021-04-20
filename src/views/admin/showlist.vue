@@ -24,10 +24,8 @@
             <el-form-item label="专业类别">
               <el-input v-model="formInline.region" placeholder="活动区域"></el-input>
             </el-form-item>
-          </div>
-          <div class="search_button">
             <el-form-item>
-              <el-button type="primary" @click="onSubmit" style="  width: 200px;height: 100px;font-size: 50px">查询
+              <el-button type="primary" @click="onSubmit" style="margin-left: 50px">查询
               </el-button>
             </el-form-item>
           </div>
@@ -55,7 +53,7 @@
         <el-table-column
             property="majorName"
             label="专业名称"
-            width="120">
+            width="180">
         </el-table-column>
         <el-table-column
             property="majorNum"
@@ -65,7 +63,7 @@
         <el-table-column
             property="name"
             label="申报人"
-            width="120">
+            width="80">
         </el-table-column>
         <el-table-column
             property="tel"
@@ -74,7 +72,7 @@
         </el-table-column>
         <el-table-column
             property="status"
-            label="状态"
+            label="审批状态"
             width="120">
         </el-table-column>
         <el-table-column label="材料">
@@ -97,13 +95,13 @@
         </el-table-column>
       </el-table>
     </div>
-    <div class="pages">
+
       <el-pagination
           background
           layout="prev, pager, next"
           :total="1000">
       </el-pagination>
-    </div>
+
   </div>
 </template>
 
@@ -119,55 +117,55 @@ export default {
       tableData: [{
         school: "西北工业大学",
         majorName: "软件工程",
-        majorNum: "140001",
+        majorNum: "142055475",
         name: "李世良",
         tel: "17542897541",
-        status: "待审核",
+        status: "校方已通过",
         file: "",
         review: "",
       }, {
         school: "西北工业大学",
-        majorName: "软件工程",
-        majorNum: "140001",
-        name: "李世良",
+        majorName: "计算机科学与技术",
+        majorNum: "142055477",
+        name: "陈康达",
         tel: "17542897541",
-        status: "待审核",
+        status: "校方已通过",
         file: "",
         review: "",
       }, {
         school: "西北工业大学",
-        majorName: "软件工程",
-        majorNum: "140001",
-        name: "李世良",
-        tel: "17542897541",
-        status: "待审核",
+        majorName: "应用数学",
+        majorNum: "142055477",
+        name: "陈军正",
+        tel: "175428978641",
+        status: "校方已通过",
         file: "",
         review: "",
       }, {
         school: "西北工业大学",
-        majorName: "软件工程",
-        majorNum: "140001",
-        name: "李世良",
-        tel: "17542897541",
-        status: "待审核",
+        majorName: "微电子科学与技术",
+        majorNum: "142055856",
+        name: "刘晓斌",
+        tel: "17549637584",
+        status: "校方已通过",
         file: "",
         review: "",
       }, {
-        school: "西北工业大学",
+        school: "西安电子科技大学",
         majorName: "软件工程",
-        majorNum: "140001",
-        name: "李世良",
+        majorNum: "142055475",
+        name: "李百香",
         tel: "17542897541",
-        status: "待审核",
+        status: "校方已通过",
         file: "",
         review: "",
       }, {
-        school: "西北工业大学",
-        majorName: "软件工程",
-        majorNum: "140001",
-        name: "李世良",
+        school: "西安电子科技大学",
+        majorName: "计算机科学与技术",
+        majorNum: "142055478",
+        name: "姜慧慧",
         tel: "17542897541",
-        status: "待审核",
+        status: "校方已通过",
         file: "",
         review: "",
       }],
@@ -202,21 +200,18 @@ export default {
 }
 
 .search_item {
-  width: 600px;
-}
-
-.search_button {
-  font-size: 100px;
+  width: 800px;
 }
 
 .list_table {
   width: 90%;
   margin-left: 5%;
-  height: 350px;
+  height: 400px;
+  overflow-y: auto;
 }
 
-.pages {
-  margin-top: 20px;
-  margin-left: 25%;
+.el-pagination {
+  text-align: center;
+  margin-top: 10px;
 }
 </style>

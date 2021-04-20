@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div style="margin-bottom: 50px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>专家</el-breadcrumb-item>
+        <el-breadcrumb-item>未审批列表</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <div style="width: 100%">
       <span class="title">未评审专业列表</span>
     </div>

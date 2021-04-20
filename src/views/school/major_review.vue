@@ -53,14 +53,25 @@
         </el-table-column>
         <el-table-column
             align="center"
-            prop="status"
-            label="审批"
-            width="80">
+            prop="date"
+            label="时间">
         </el-table-column>
         <el-table-column
             align="center"
-            prop="date"
-            label="时间">
+            prop="status"
+            label="审批状态">
+        </el-table-column>
+        <el-table-column
+            align="center"
+            label="审批"
+            width="80">
+          <el-button type="success" class="el-button" @click="open_pas">通过</el-button>
+        </el-table-column>
+        <el-table-column
+            align="center"
+            label="退回"
+            width="80">
+          <el-button type="danger" class="el-button" @click="open_del">退回</el-button>
         </el-table-column>
       </el-table>
       <el-pagination
@@ -84,7 +95,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '校方通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -92,7 +103,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '校方通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -100,7 +111,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '校方通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -108,7 +119,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '教育厅通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -116,7 +127,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '教育厅通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -124,7 +135,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '教育厅通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -132,7 +143,7 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '教育厅通过',
         date: '2021/03/02'
       }, {
         college: '软件学院',
@@ -140,9 +151,53 @@ export default {
         major: '软件工程',
         manager: '李世良',
         subject: '软件工程',
-        status: '通过',
+        status: '教育厅通过',
+        date: '2021/03/02'
+      }, {
+        college: '软件学院',
+        code: "0001",
+        major: '软件工程',
+        manager: '李世良',
+        subject: '软件工程',
+        status: '教育厅通过',
         date: '2021/03/02'
       }]
+    }
+  },
+  methods: {
+    open_pas() {
+      this.$confirm('此操作将通过该申请, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '已通过!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消！'
+        });
+      });
+    },
+    open_del() {
+      this.$confirm('此操作将删除该申请, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     }
   }
 }
@@ -151,11 +206,18 @@ export default {
 <style scoped>
 .el-table {
   width: 90%;
-  height: 500px;
+  height: 550px;
 }
 
 .el-pagination {
   margin-top: 20px;
-  margin-left: 40%;
+  text-align: center;
+}
+
+.el-button {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  padding: 0px;
 }
 </style>

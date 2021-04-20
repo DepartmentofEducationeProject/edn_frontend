@@ -78,7 +78,7 @@
         </el-table-column>
         <el-table-column
             prop="status"
-            label="审批"
+            label="申报结果"
             align="center"
             width="120">
         </el-table-column>
@@ -122,7 +122,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报通过",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -130,7 +130,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报失败",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -138,7 +138,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报通过",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -146,7 +146,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报通过",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -154,7 +154,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报失败",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -162,7 +162,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报失败",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',
@@ -170,7 +170,7 @@ export default {
         college: '软件学院',
         code: "120122554",
         major: "软件工程",
-        status: "已审核",
+        status: "申报失败",
         manager: "李世良",
         subject: '软件工程',
         date: '2021/03/02',

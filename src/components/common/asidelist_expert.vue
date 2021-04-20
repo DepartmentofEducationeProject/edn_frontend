@@ -3,7 +3,7 @@
     <el-aside>
       <el-menu background-color="#224d79" @select="menuClick">
         <el-submenu index="1">
-          <template slot="title"><i class="el-icon-menu"></i><span class="list_item"> 专业申报</span></template>
+          <template slot="title"><i class="el-icon-menu"></i><span class="list_item"> 专业评审</span></template>
           <el-menu-item index="/notReviewed"><span class="list_item">未评审列表</span></el-menu-item>
           <el-menu-item index="/hasReviewed"><span class="list_item">已评审列表</span></el-menu-item>
         </el-submenu>

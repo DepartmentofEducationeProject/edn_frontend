@@ -66,7 +66,7 @@
             align="center"
             label="操作"
             width="120">
-          <el-button type="mini warning">删除</el-button>
+          <el-button type="mini warning" @click="open_del">删除</el-button>
         </el-table-column>
       </el-table>
     </div>
@@ -156,6 +156,23 @@ export default {
     },
     toMajorTransfer() {
       this.$router.replace("/major_transfer");
+    },
+    open_del() {
+      this.$confirm('此操作将删除该申请, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '删除成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });
+      });
     }
   }
 }
@@ -180,9 +197,9 @@ export default {
 
 .result_table {
   margin-top: 20px;
-  border: solid;
+  /*border: solid;*/
   height: 550px;
-  background-color: #eaeaea;
+  /*background-color: #eaeaea;*/
 }
 
 </style>

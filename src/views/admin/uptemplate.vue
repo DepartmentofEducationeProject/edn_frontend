@@ -7,7 +7,7 @@
         <el-breadcrumb-item>材料上传</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <div class="upload_title"><span>继续教育申报书模板（请上传WORD文档）</span></div>
+    <div class="upload_title"><span>一流专业申报书模板（请上传WORD文档）</span></div>
     <div class="upload_area">
       <div>
         <el-input v-model="input" class="upload_input"></el-input>

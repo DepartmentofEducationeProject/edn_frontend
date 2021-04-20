@@ -27,6 +27,11 @@ import review_process from "../views/school/review_process";
 import review_result from "../views/school/review_result";
 import college_user_management from "../views/school/college_user_management";
 import userInformation from "../components/common/userInformation";
+import showMajor from "../views/admin/showMajor";
+import admin_homePage from "../views/admin/admin_homePage";
+import school_homePage from "../views/school/school_homePage";
+import college_homePage from "../views/college/college_homePage";
+import expert_homePage from "../views/expert/expert_homePage";
 
 
 Vue.use(VueRouter)
@@ -112,6 +117,11 @@ const routes = [
             name: 'major_transfer',
             component: major_transfer,
         },
+        {
+            path: '/showMajor',
+            name: 'showMajor',
+            component: showMajor,
+        },
         //学院用户
         {
             path: '/addFile',
@@ -170,6 +180,27 @@ const routes = [
             path: "/userInformation",
             name: "userInformation",
             component: userInformation,
+        },
+        //用户主页
+        {
+            path: "/adminHomePage",
+            name: "adminHomePage",
+            component: admin_homePage,
+        },
+        {
+            path: "/schoolHomePage",
+            name: "schoolHomePage",
+            component: school_homePage,
+        },
+        {
+            path: "/collegeHomePage",
+            name: "collegeHomePage",
+            component: college_homePage,
+        },
+        {
+            path: "/expertHomePage",
+            name: "expertHomePage",
+            component: expert_homePage,
         }
     ]
   },

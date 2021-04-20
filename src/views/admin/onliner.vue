@@ -3,14 +3,9 @@
     <div style="margin-bottom: 50px">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+        <el-breadcrumb-item>管理员</el-breadcrumb-item>
+        <el-breadcrumb-item>在线用户</el-breadcrumb-item>
       </el-breadcrumb>
-    </div>
-    <div class="result_search">
-      <el-button type="primary" style="width:100px;margin-left: 50px">添加</el-button>
-      <el-button type="success" style="width:100px;margin-left: 50px">删除</el-button>
     </div>
     <div class="result_table">
       <el-table
@@ -32,7 +27,7 @@
             align="center"
             prop="username"
             label="用户名"
-            width="120">
+            width="280">
         </el-table-column>
         <el-table-column
             align="center"
@@ -58,34 +53,19 @@
             label="过期时间"
             width="200">
         </el-table-column>
-        <el-table-column label="状态" align="center">
-          <el-button
-              type="success"
-              size="mini"
-              @click="handleEdit(scope.$index, scope.row)">通过
-          </el-button>
-        </el-table-column>
-        <el-table-column label="操作" align="center">
-          <el-button
-              type="danger"
-              size="mini"
-              @click="handleEdit(scope.$index, scope.row)">删除
-          </el-button>
-        </el-table-column>
       </el-table>
     </div>
-    <div class="block pages">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[100, 200, 300, 400]"
-          :page-size="100"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400"
-          style="margin-left: 20%">
-      </el-pagination>
-    </div>
+
+    <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[100, 200, 300, 400]"
+        :page-size="100"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="400">
+    </el-pagination>
+
   </div>
 </template>
 
@@ -103,49 +83,55 @@ export default {
       currentPage3: 5,
       currentPage4: 4,
       tableData: [{
-        username: "西北工业大学",
+        username: "西北工业大学_01",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西北工业大学_02",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西北工业大学_03",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_01",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_02",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_03",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西安电子科技大学_01",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
         outOfTime: "2021-04-07 15:31",
       }, {
-        username: "西北工业大学",
+        username: "西安电子科技大学_02",
+        hostname: "127.0.0.1,",
+        loginTime: "2021-04-07 15:31",
+        lastVisit: "2021-04-07 15:31",
+        outOfTime: "2021-04-07 15:31",
+      }, {
+        username: "西安电子科技大学_03",
         hostname: "127.0.0.1,",
         loginTime: "2021-04-07 15:31",
         lastVisit: "2021-04-07 15:31",
@@ -182,16 +168,14 @@ export default {
 </script>
 
 <style scoped>
-.result_search {
-  margin-left: 0px;
-}
-
 .result_table {
   margin-top: 20px;
+  height: 550px;
+  overflow-y: auto;
 }
 
-.pages {
-  margin-left: 50px;
+.el-pagination {
+  text-align: center;
   margin-top: 10px;
 }
 </style>

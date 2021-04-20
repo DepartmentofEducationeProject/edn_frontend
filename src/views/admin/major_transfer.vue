@@ -1,16 +1,28 @@
 <template>
-<div>
-  <div class="transfer">
-    <el-transfer
-        filterable
-        :filter-method="filterMethod"
-        :titles="['全部专业', '已选专业']"
-        filter-placeholder="请输入专业代号"
-        v-model="value"
-        :data="data">
-    </el-transfer>
+  <div>
+    <div style="margin-bottom: 50px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>管理员</el-breadcrumb-item>
+        <el-breadcrumb-item>评审分组</el-breadcrumb-item>
+        <el-breadcrumb-item>专业分组</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
+    <div class="transferDiv">
+      <el-transfer
+          filterable
+          :filter-method="filterMethod"
+          :titles="['未分组专业', '本组专业']"
+          filter-placeholder="请输入专业名称"
+          v-model="value"
+          :data="data">
+      </el-transfer>
+      <div class="buttonDiv">
+        <el-button type="primary" style="width: 150px" @click="open">保存</el-button>
+        <el-button type="success" style="width:150px;margin-left: 100px" @click="back">返回</el-button>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -19,11 +31,11 @@ export default {
   data() {
     const generateData = _ => {
       const data = [];
-      const majors = ['计算机科学与技术', '软件工程', '飞行器设计与制造', '探测与制导'];
-      const pinyin = ['0001', '0002', '0003', '0004'];
-      majors.forEach((major, index) => {
+      const experts = ['软件工程', '计算机科学与技术', '应用数学', '微电子科学与技术', '光学', '工商管理'];
+      const pinyin = ['lishiliang', 'liuxiaobin', 'chenkangda', 'chenjunzheng', 'zhangyasong', 'gongshangguanli'];
+      experts.forEach((expert, index) => {
         data.push({
-          label: major,
+          label: expert,
           key: index,
           pinyin: pinyin[index]
         });
@@ -37,10 +49,47 @@ export default {
         return item.pinyin.indexOf(query) > -1;
       }
     };
+  },
+  methods: {
+    back() {
+      this.$router.replace("/expertgroup");
+    },
+    open() {
+      this.$confirm('此操作将修改专业分组, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: '修改成功!'
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消修改'
+        });
+      });
+    }
   }
 }
 </script>
 
 <style scoped>
+.el-transfer {
+  width: 100%;
+  height: 100%;
 
+}
+
+.transferDiv {
+  width: 600px;
+  height: 400px;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.buttonDiv {
+  text-align: center;
+}
 </style>

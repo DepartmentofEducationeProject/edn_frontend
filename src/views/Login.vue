@@ -41,7 +41,17 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           if (true) {
-            this.$router.push({path: '/home', query: {username: this.$refs.username.value}});
+            if (this.$refs.username.value === 'admin') {
+              this.$router.push({path: '/adminHomePage', query: {username: this.$refs.username.value}});
+            } else if (this.$refs.username.value === 'school') {
+              this.$router.push({path: '/schoolHomePage', query: {username: this.$refs.username.value}});
+            } else if (this.$refs.username.value === 'college') {
+              this.$router.push({path: '/collegeHomePage', query: {username: this.$refs.username.value}});
+            } else if (this.$refs.username.value === 'expert') {
+              this.$router.push({path: '/expertHomePage', query: {username: this.$refs.username.value}});
+            } else {
+
+            }
           }
         } else {
           this.$message.error('请输入所有字段！');

@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div style="margin-bottom: 50px">
+      <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>学院</el-breadcrumb-item>
+        <el-breadcrumb-item>申报进度查询</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <h1>我的进度查询</h1>
     <el-table
         :data="tableData"
@@ -49,16 +56,16 @@ export default {
     return {
       tableData: [{
         name: '软件工程',
-        college: '西北工业大学',
+        college: '软件学院',
         manager: '李世良',
         result: '审核中',
         process: '1',
-      }, {
-        name: '计算机科学与技术',
-        college: '西北工业大学',
-        manager: '李世良',
-        result: '已通过',
-        process: '3',
+        // }, {
+        //   name: '计算机科学与技术',
+        //   college: '西北工业大学',
+        //   manager: '李世良',
+        //   result: '已通过',
+        //   process: '3',
       }]
     }
   }

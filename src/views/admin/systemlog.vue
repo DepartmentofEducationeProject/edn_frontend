@@ -9,9 +9,7 @@
     </div>
     <div class="result_search">
       <el-form :inline="true" :model="formInline" class="demo-form-inline">
-        <el-button type="primary" style="width:100px;margin-left: 50px">添加</el-button>
-        <el-button type="success" style="width:100px;margin-left: 50px">删除</el-button>
-        <el-form-item style="margin-left: 250px">
+        <el-form-item style="margin-left: 450px">
           <el-input v-model="formInline.major" placeholder="用户名" style="width: 200px"></el-input>
         </el-form-item>
         <el-form-item style="margin-left: 30px">
@@ -31,72 +29,81 @@
           style="width: 100%"
           @selection-change="handleSelectionChange">
         <el-table-column
+            align="center"
             type="selection"
             width="55">
         </el-table-column>
         <el-table-column
+            align="center"
             type="index"
             width="55">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="userid"
             label="用户id"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="username"
             label="用户名"
-            width="120">
+            width="200">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="option"
             label="操作"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="time"
             label="用时"
             width="200">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="method"
             label="方法"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="param"
             label="参数">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="ip"
             label="IP地址"
             width="120">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="createTime"
             label="创建时间"
             width="200">
         </el-table-column>
-        <el-table-column label="操作" show-overflow-tooltip>
+        <el-table-column align="center" label="操作" fixed="right" show-overflow-tooltip>
           <el-button
               type="danger"
-              size="mini"
-              @click="handleEdit(scope.$index, scope.row)">删除
+              size="mini">删除
           </el-button>
         </el-table-column>
       </el-table>
     </div>
-    <div class="block pages">
-      <el-pagination
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[100, 200, 300, 400]"
-          :page-size="100"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400" style="margin-left: 20%">
-      </el-pagination>
-    </div>
+
+    <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage4"
+        :page-sizes="[100, 200, 300, 400]"
+        :page-size="100"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="400">
+    </el-pagination>
+
   </div>
 </template>
 
@@ -114,7 +121,7 @@ export default {
       currentPage3: 5,
       currentPage4: 4,
       tableData: [{
-        username: "西北工业大学",
+        username: "西北工业大学_01",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -123,7 +130,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西北工业大学_02",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -132,7 +139,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西北工业大_03",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -141,7 +148,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_01",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -150,7 +157,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_02",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -159,7 +166,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西安交通大学_03",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -168,7 +175,7 @@ export default {
         ip: "127.0.0.1",
         createTime: "2021-04-09 16:42",
       }, {
-        username: "西北工业大学",
+        username: "西安电子科技大学_01",
         userid: "140001",
         option: "Post",
         method: "Post",
@@ -214,10 +221,12 @@ export default {
 
 .result_table {
   margin-top: 20px;
+  height: 450px;
+  overflow-x: auto;
 }
 
-.pages {
-  margin-left: 50px;
+.el-pagination {
+  text-align: center;
   margin-top: 10px;
 }
 </style>

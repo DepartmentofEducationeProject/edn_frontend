@@ -4,7 +4,7 @@
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>管理员</el-breadcrumb-item>
-        <el-breadcrumb-item>评审结果</el-breadcrumb-item>
+        <el-breadcrumb-item>查看一流专业</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div class="result_search">
@@ -23,11 +23,6 @@
         </el-form-item>
       </el-form>
     </div>
-    <div class="result_option">
-      <el-button type="primary">刷新</el-button>
-      <el-button type="success">切换</el-button>
-      <el-button type="info">导出评审结果</el-button>
-    </div>
     <div class="result_table">
       <el-table
           ref="multipleTable"
@@ -37,53 +32,44 @@
           style="width: 100%"
           @selection-change="handleSelectionChange">
         <el-table-column
-            type="selection"
-            width="50">
+            align="center"
+            type="index"
+            width="80">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="id"
             label="编号"
             width="80">
         </el-table-column>
         <el-table-column
-            prop="expName"
-            label="专家名称"
-            width="120">
-        </el-table-column>
-        <el-table-column
+            align="center"
             prop="major"
-            label="申报专业"
-            width="180">
+            label="一流专业"
+            width="200">
         </el-table-column>
         <el-table-column
+            align="center"
             prop="school"
-            label="申报学校"
+            label="所属学校"
+            width="200">
+        </el-table-column>
+        <el-table-column
+            align="center"
+            prop="majorCode"
+            label="专业代码"
             width="180">
         </el-table-column>
         <el-table-column
-            prop="manager"
-            label="负责人"
-            width="80">
-        </el-table-column>
-        <el-table-column
-            prop="tel"
-            label="联系方式"
+            align="center"
+            prop="schoolCode"
+            label="学校代码"
             width="180">
         </el-table-column>
         <el-table-column
-            prop="level"
-            label="专业层次"
-            width="100">
-        </el-table-column>
-        <el-table-column
+            align="center"
             prop="date"
-            label="创建时间"
-            width="120">
-        </el-table-column>
-        <el-table-column
-            prop="score"
-            label="得分"
-            width="60px">
+            label="申报时间">
         </el-table-column>
       </el-table>
     </div>
@@ -103,7 +89,7 @@
 
 <script>
 export default {
-  name: "reviewresult",
+  name: "showMajor",
   data() {
     return {
       formInline: {
@@ -117,84 +103,60 @@ export default {
       currentPage4: 4,
       tableData: [{
         id: "140001",
-        expName: "李世良",
-        major: "软件工程",
-        school: "西北工业大学",
-        manager: "刘晓斌",
-        tel: "17541285647",
-        level: "一流学科",
-        date: "2016-05-01",
-        score: "90"
+        major: '软件工程',
+        school: '西北工业大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140002",
-        expName: "李晓亮",
-        major: "计算机科学与技术",
-        school: "西北工业大学",
-        manager: "刘晓斌",
-        tel: "17541245698",
-        level: "一流学科",
-        date: "2016-08-11",
-        score: "86"
+        id: "140001",
+        major: '计算机科学与技术',
+        school: '西北工业大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140003",
-        expName: "李忠良",
-        major: "光学",
-        school: "西北工业大学",
-        manager: "刘晓斌",
-        tel: "17541536925",
-        level: "一流学科",
-        date: "2016-04-21",
-        score: "85"
+        id: "140001",
+        major: '应用数学',
+        school: '西北工业大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140004",
-        expName: "李大亮",
-        major: "应用数学",
-        school: "西北工业大学",
-        manager: "刘晓斌",
-        tel: "17541245176",
-        level: "一流学科",
-        date: "2016-08-15",
-        score: "73"
+        id: "140001",
+        major: '飞行器设计与制造',
+        school: '西北工业大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140005",
-        expName: "陈军正",
-        major: "软件工程",
-        school: "西安电子科技大学",
-        manager: "陈康达",
-        tel: "17541123694",
-        level: "一流学科",
-        date: "2016-02-03",
-        score: "62"
+        id: "140001",
+        major: '软件工程',
+        school: '西安电子科技大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140006",
-        expName: "陈军歪",
-        major: "计算机科学与技术",
-        school: "西安电子科技大学",
-        manager: "陈康达",
-        tel: "17541769841",
-        level: "一流学科",
-        date: "2016-05-01",
-        score: "68"
+        id: "140001",
+        major: '计算机科学与技术',
+        school: '西安电子科技大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140007",
-        expName: "陈不正",
-        major: "微电子科学与技术",
-        school: "西安电子科技大学",
-        manager: "陈康达",
-        tel: "17541564564",
-        level: "一流学科",
-        date: "2016-04-05",
-        score: "92"
+        id: "140001",
+        major: '电子科学与技术',
+        school: '西安电子科技大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }, {
-        id: "140008",
-        expName: "陈不歪",
-        major: "数学",
-        school: "西安电子科技大学",
-        manager: "陈康达",
-        tel: "17541888761",
-        level: "一流学科",
-        date: "2016-07-09",
-        score: "81"
+        id: "140001",
+        major: '电子科学与技术',
+        school: '西安电子科技大学',
+        majorCode: '140001542',
+        schoolCode: '10025',
+        date: '2021-05-21',
       }],
       multipleSelection: []
     }
@@ -237,6 +199,8 @@ export default {
 
 .result_table {
   margin-top: 20px;
+  height: 450px;
+  /*border: solid;*/
 }
 
 .el-pagination {
