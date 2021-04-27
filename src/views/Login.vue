@@ -2,6 +2,7 @@
   <div>
     <div class="background">
       <img :src="imgSrc" width="100%" height="100%" alt=""/>
+      <Video></Video>
     </div>
     <div class="loginContainer">
       <el-form :rules="rules" ref="loginForm" :model="loginForm">
@@ -21,10 +22,15 @@
 </template>
 
 <script>
+import axios from "axios";
+import Video from "../components/common/Video";
+
 export default {
   name: "Login",
+  components: {Video},
   data() {
     return {
+      success: null,
       imgSrc: require('../assets/login_background.jpg'),
       loginForm: {
         username: "admin",
@@ -36,22 +42,35 @@ export default {
       }
     };
   },
+  created() {
+    const _this = this;
+    let data = {"account": "2017303105", "password": "000000"};
+    axios.post('https://docs.xqjun.top/mock/69/api/auth/login', data).then(function (resp) {
+      console.log(resp);
+      alert(resp.data.data.roles);
+    });
+  },
   methods: {
     submitLogin() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           if (true) {
-            if (this.$refs.username.value === 'admin') {
-              this.$router.push({path: '/adminHomePage', query: {username: this.$refs.username.value}});
-            } else if (this.$refs.username.value === 'school') {
-              this.$router.push({path: '/schoolHomePage', query: {username: this.$refs.username.value}});
-            } else if (this.$refs.username.value === 'college') {
-              this.$router.push({path: '/collegeHomePage', query: {username: this.$refs.username.value}});
-            } else if (this.$refs.username.value === 'expert') {
-              this.$router.push({path: '/expertHomePage', query: {username: this.$refs.username.value}});
-            } else {
-
-            }
+            // const _this = this;
+            // let data = {"account":"2017303105","password":"000000"};
+            // axios.post('https://docs.xqjun.top/mock/69/api/auth/login',data).then(function (resp) {
+            //   console.log(resp);
+            // });
+            // if (this.$refs.username.value === 'admin') {
+            //   this.$router.push({path: '/adminHomePage', query: {username: this.$refs.username.value}});
+            // } else if (this.$refs.username.value === 'school') {
+            //   this.$router.push({path: '/schoolHomePage', query: {username: this.$refs.username.value}});
+            // } else if (this.$refs.username.value === 'college') {
+            //   this.$router.push({path: '/collegeHomePage', query: {username: this.$refs.username.value}});
+            // } else if (this.$refs.username.value === 'expert') {
+            //   this.$router.push({path: '/expertHomePage', query: {username: this.$refs.username.value}});
+            // } else {
+            //   alert("不存在该用户！");
+            // }
           }
         } else {
           this.$message.error('请输入所有字段！');

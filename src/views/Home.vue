@@ -3,7 +3,7 @@
     <el-container>
       <el-aside width="301px">
         <div class="title">
-          <span><br/>陕西高等教育教学改革<br/>一流专业申报系统</span>
+          <span><br/>陕西高等教育教学改革<br/>一流课程申报系统</span>
         </div>
         <div class="asideList" id="aside_list">
           <asidelist_admin v-if="type==='admin'"></asidelist_admin>
@@ -76,6 +76,7 @@ export default {
 }
 
 .divContainer {
+  width: 1520px;
   height: 740px;
   overflow-y: hidden;
   border: solid 1px;
